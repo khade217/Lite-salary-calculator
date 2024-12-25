@@ -1,0 +1,139 @@
+<html>
+<head>
+    <base href="https://portfolio.tech.guy/"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Tech Guy's Portfolio Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+            color: #e94560;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            padding: clamp(20px, 5vw, 40px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            width: clamp(300px, 90%, 600px);
+            margin: clamp(10px, 3vw, 30px);
+        }
+        h1 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: clamp(15px, 4vw, 30px);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background: #E4EFC0;
+            background: linear-gradient(to right, #E4EFC0 0%, #ABBD73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(12px, 3vw, 20px);
+        }
+        .link {
+            background: #e94560;
+            color: #1a1a2e;
+            padding: clamp(12px, 3vw, 20px) clamp(20px, 5vw, 35px);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .link i {
+            font-size: clamp(16px, 4vw, 20px);
+
+        }
+        .link:hover {
+            background: #1a1a2e;
+            color: #e94560;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+        .link::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            pointer-events: none;
+            transition: all 0.6s ease;
+        }
+        .link:hover::before {
+            left: 100%;
+        }
+        .avatar {
+            width: clamp(100px, 30vw, 150px);
+            height: clamp(100px, 30vw, 150px);
+            border-radius: 50%;
+            margin-bottom: clamp(15px, 4vw, 30px);
+            border: 4px solid #e94560;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+        }
+
+@media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            .link {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://assets.onecompiler.app/42kq8ngd7/42qkwhawf/logo_css.png" alt="Tech Guy's avatar, a stylized portrait with neon accents" class="avatar" width="150" height="150">
+        <h1> Dvibe Studio</h1>
+        <div class="links">
+            <a href="https://github.com/techguy" class="link"><i class="fab fa-github"></i>GitHub Projects</a>
+            <a href="https://linkedin.com/in/techguy" class="link"><i class="fab fa-linkedin"></i>LinkedIn Profile</a>
+            <a href="https://techblog.com/author/techguy" class="link"><i class="fas fa-blog"></i>Tech Blog</a>
+
+            <a href="https://twitter.com/techguy" class="link"><i class="fab fa-twitter"></i>Twitter Feed</a>
+            <a href="mailto:contact@techguy.com" class="link"><i class="fas fa-envelope"></i>Contact Me</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const links = document.querySelectorAll('.link');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    link.style.animation = 'pulse 0.5s';
+                });
+                link.addEventListener('animationend', () => {
+                    link.style.animation = '';
+                });
+            });
+        });
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </script>
+</body>
+</html>
